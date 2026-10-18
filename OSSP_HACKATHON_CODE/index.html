@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Smart CPU Scheduler</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav container" aria-label="Main">
+    <a href="index.html" class="brand"><span class="brand-mark" aria-hidden="true"></span>Smart CPU Scheduler</a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#how">How it works</a>
+      <a href="#syllabus">Syllabus</a>
+    </div>
+    <div class="nav-actions">
+      <a href="dashboard.html" class="nav-cta" data-auth="in" hidden>Dashboard</a>
+      <a href="login.html" class="nav-link" data-auth="out">Log in</a>
+      <a href="signup.html" class="nav-cta" data-auth="out">Sign up</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-copy">
+        <span class="badge">Operating systems project</span>
+        <h1>Scheduling built for fairness.</h1>
+        <p class="lead">A CPU scheduler that changes task priorities while it runs. Waiting tasks move up, apps respond faster, and heavy jobs share the processor.</p>
+        <div class="hero-actions">
+          <a href="signup.html" class="btn btn-primary">Create free account</a>
+          <a href="#how" class="btn btn-ghost">See how it works</a>
+        </div>
+      </div>
+
+      <div class="hero-art" aria-hidden="true">
+        <div class="grid-band"></div>
+        <div class="bubbles">
+          <span class="bubble" style="--s:110px;--x:150px;--y:20px;--d:0s"></span>
+          <span class="bubble" style="--s:52px;--x:58px;--y:108px;--d:1s"></span>
+          <span class="bubble" style="--s:52px;--x:238px;--y:70px;--d:2s"></span>
+          <span class="bubble" style="--s:110px;--x:100px;--y:150px;--d:.5s"></span>
+          <span class="bubble" style="--s:110px;--x:230px;--y:170px;--d:1.5s"></span>
+          <span class="bubble" style="--s:52px;--x:300px;--y:40px;--d:2.5s"></span>
+          <span class="bubble" style="--s:52px;--x:40px;--y:270px;--d:3s"></span>
+          <span class="bubble" style="--s:60px;--x:260px;--y:290px;--d:1.2s"></span>
+          <span class="bubble" style="--s:44px;--x:200px;--y:318px;--d:2.2s"></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="section container">
+    <h2>The problem</h2>
+    <p class="section-lead">Simple schedulers run the highest priority task first. That works until it doesn't.</p>
+    <div class="cards3">
+      <article class="card">
+        <h3>Some tasks never run</h3>
+        <p>Low-priority work can wait forever while new high-priority tasks keep arriving. This is called starvation.</p>
+      </article>
+      <article class="card">
+        <h3>Apps feel slow</h3>
+        <p>Typing and clicking lag when they queue behind heavy background computation.</p>
+      </article>
+      <article class="card">
+        <h3>One task takes over</h3>
+        <p>A CPU-heavy job can keep the processor busy and leave everything else with nothing.</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="how" class="section container">
+    <h2>How it works</h2>
+    <p class="section-lead">The scheduler repeats the same four steps, so priorities keep adjusting while the system runs.</p>
+    <ol class="steps">
+      <li>
+        <h3>Queue</h3>
+        <p>Every ready task waits in line with a priority score.</p>
+      </li>
+      <li>
+        <h3>Run</h3>
+        <p>The highest-scoring task gets the CPU for a short time slice.</p>
+      </li>
+      <li>
+        <h3>Check</h3>
+        <p>Did it finish, wait for input, or use its whole slice?</p>
+      </li>
+      <li>
+        <h3>Update</h3>
+        <p>Boost, penalize, and age the other tasks. Then start again.</p>
+      </li>
+    </ol>
+  </section>
+
+  <section id="syllabus" class="section container">
+    <h2>Course outcomes</h2>
+    <p class="section-lead">Topics from the operating systems syllabus. Highlighted topics are used in this project.</p>
+    <div id="syllabus-grid" class="syllabus-grid"></div>
+  </section>
+
+  <section class="cta-band container">
+    <h2>Run the scheduler with your own tasks.</h2>
+    <a href="signup.html" class="btn btn-primary">Create free account</a>
+  </section>
+</main>
+
+<footer class="footer container">
+  <span>Smart CPU Scheduler</span>
+  <span>Built with Node.js, Express and SQLite</span>
+</footer>
+
+<script src="js/api.js"></script>
+<script src="js/main.js"></script>
+<script src="js/index.js"></script>
+</body>
+</html>

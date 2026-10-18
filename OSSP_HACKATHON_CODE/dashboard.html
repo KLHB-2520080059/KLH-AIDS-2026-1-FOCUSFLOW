@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dashboard | Smart CPU Scheduler</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav container" aria-label="Main">
+    <a href="index.html" class="brand"><span class="brand-mark" aria-hidden="true"></span>Smart CPU Scheduler</a>
+    <div class="nav-actions">
+      <span id="user-name" class="muted small"></span>
+      <button class="nav-link" type="button" data-logout>Log out</button>
+    </div>
+  </nav>
+</header>
+
+<main class="container dash">
+  <section class="dash-head">
+    <h1>Scheduler simulator</h1>
+    <p class="muted">Add tasks, run the simulation, and compare base priority with dynamic priority.</p>
+  </section>
+
+  <div class="dash-grid">
+    <section class="card" aria-labelledby="tasks-title">
+      <h2 id="tasks-title">Tasks</h2>
+      <p class="muted small">CPU tasks use the processor continuously. I/O tasks pause to wait for input.</p>
+      <div class="table-wrap">
+        <table class="proc-table">
+          <thead>
+            <tr><th>Name</th><th>Type</th><th>Base priority</th><th>Work (ticks)</th><th><span class="sr-only">Remove</span></th></tr>
+          </thead>
+          <tbody id="proc-rows"></tbody>
+        </table>
+      </div>
+      <div class="row-actions">
+        <button class="btn btn-ghost" id="add-row" type="button">Add task</button>
+        <button class="btn btn-primary" id="run-btn" type="button">Run simulation</button>
+      </div>
+      <p id="run-error" class="form-error" role="alert" hidden></p>
+    </section>
+
+    <section class="card" aria-labelledby="results-title">
+      <h2 id="results-title">Results</h2>
+      <div id="results"><p class="muted">Run the simulation to see results here.</p></div>
+      <div class="row-actions" id="save-row" hidden>
+        <input id="run-title" class="input input-inline" placeholder="Name this run" maxlength="80" aria-label="Run name">
+        <button class="btn btn-primary" id="save-btn" type="button">Save run</button>
+      </div>
+    </section>
+  </div>
+
+  <section class="card" aria-labelledby="saved-title">
+    <h2 id="saved-title">Saved runs</h2>
+    <div id="saved-list"><p class="muted">No saved runs yet.</p></div>
+  </section>
+</main>
+
+<script src="js/api.js"></script>
+<script src="js/main.js"></script>
+<script src="js/scheduler.js"></script>
+<script src="js/dashboard.js"></script>
+</body>
+</html>

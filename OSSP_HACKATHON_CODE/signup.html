@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sign up | Smart CPU Scheduler</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<main class="auth-page">
+  <section class="auth-card">
+    <a href="index.html" class="brand auth-brand"><span class="brand-mark" aria-hidden="true"></span>Smart CPU Scheduler</a>
+    <h1>Create your account</h1>
+    <p class="muted">Save your simulations and come back to them any time.</p>
+
+    <form id="signup-form" novalidate>
+      <label class="field">Name
+        <input class="input" name="name" type="text" autocomplete="name" required>
+      </label>
+      <label class="field">Email
+        <input class="input" name="email" type="email" autocomplete="email" required>
+      </label>
+      <label class="field">Password
+        <input class="input" name="password" type="password" autocomplete="new-password" minlength="8" required>
+        <span class="hint">At least 8 characters.</span>
+      </label>
+      <p id="form-error" class="form-error" role="alert" hidden></p>
+      <button class="btn btn-primary btn-block" type="submit">Create account</button>
+    </form>
+
+    <p class="center muted">Already have an account? <a href="login.html">Log in</a></p>
+  </section>
+</main>
+<script src="js/api.js"></script>
+<script src="js/main.js"></script>
+<script src="js/auth.js"></script>
+</body>
+</html>
